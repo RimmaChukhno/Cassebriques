@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../core/GameObject.h"
+#include "../core/GameObject.hpp"
 
 /**
  * @brief Balle du jeu (version classique)
@@ -48,3 +48,4 @@ public:
      */
     void increaseSpeed(float multiplier = 1.1f);
 };
+

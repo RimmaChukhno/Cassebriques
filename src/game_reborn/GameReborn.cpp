@@ -1,4 +1,4 @@
-#include "GameReborn.h"
+#include "GameReborn.hpp"
 #include <iostream>
 #include <algorithm>
 #include <cmath>

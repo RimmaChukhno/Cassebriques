@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../core/GameObject.h"
+#include "../core/GameObject.hpp"
 
 /**
  * @brief Projectile tiré par le canon (version Reborn)
@@ -34,3 +34,4 @@ public:
      */
     bool isLost() const;
 };
+

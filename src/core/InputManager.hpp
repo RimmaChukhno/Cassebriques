@@ -91,10 +91,11 @@ public:
     /**
      * @brief Retourne la position de la souris (en pixels de la fenêtre)
      */
-    sf::Vector2i getMousePosition() const { return mousePosition; }
+    sf::Vector2i getMousePosition() const;
 
     /**
      * @brief Retourne la position de la souris dans le monde (si vue transformée)
      */
-    sf::Vector2i getMousePositionWorld() const { return mousePositionWorld; }
+    sf::Vector2i getMousePositionWorld() const;
 };
+

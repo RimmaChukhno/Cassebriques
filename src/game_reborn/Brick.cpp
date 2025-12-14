@@ -1,4 +1,4 @@
-#include "Brick.h"
+#include "Brick.hpp"
 
 namespace RebornGame
 {
@@ -23,6 +23,21 @@ namespace RebornGame
         {
             updateColor();
         }
+    }
+
+    bool Brick::isDestroyed() const
+    {
+        return destroyed;
+    }
+
+    int Brick::getHP() const
+    {
+        return currentHP;
+    }
+
+    int Brick::getMaxHP() const
+    {
+        return maxHP;
     }
 
     void Brick::updateColor()

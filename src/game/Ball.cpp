@@ -1,4 +1,4 @@
-#include "Ball.h"
+#include "Ball.hpp"
 #include <cmath>
 
 #ifndef M_PI

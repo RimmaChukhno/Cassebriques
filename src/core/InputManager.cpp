@@ -1,4 +1,4 @@
-#include "InputManager.h"
+#include "InputManager.hpp"
 
 InputManager::InputManager()
 {
@@ -118,4 +118,14 @@ bool InputManager::isMouseButtonPressed(sf::Mouse::Button button) const
         return it->second;
     }
     return false;
+}
+
+sf::Vector2i InputManager::getMousePosition() const
+{
+    return mousePosition;
+}
+
+sf::Vector2i InputManager::getMousePositionWorld() const
+{
+    return mousePositionWorld;
 }

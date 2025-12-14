@@ -1,4 +1,4 @@
-#include "Cannon.h"
+#include "Cannon.hpp"
 #include <cmath>
 
 #ifndef M_PI

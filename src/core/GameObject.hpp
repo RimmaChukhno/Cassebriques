@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "AABB.h"
+#include "AABB.hpp"
 
 /**
  * @brief Classe de base pour tous les objets du jeu
@@ -33,21 +33,21 @@ public:
     virtual ~GameObject() = default;
 
     // Getters
-    sf::Vector2f getPosition() const { return position; }
-    sf::Vector2f getSize() const { return size; }
-    float getRadius() const { return radius; }
-    bool getIsCircle() const { return isCircle; }
-    sf::Vector2f getVelocity() const { return velocity; }
-    float getRotation() const { return rotation; }
-    sf::Color getColor() const { return color; }
+    sf::Vector2f getPosition() const;
+    sf::Vector2f getSize() const;
+    float getRadius() const;
+    bool getIsCircle() const;
+    sf::Vector2f getVelocity() const;
+    float getRotation() const;
+    sf::Color getColor() const;
 
     // Setters
-    void setPosition(const sf::Vector2f &pos) { position = pos; }
-    void setPosition(float x, float y) { position = sf::Vector2f(x, y); }
-    void setVelocity(const sf::Vector2f &vel) { velocity = vel; }
-    void setVelocity(float vx, float vy) { velocity = sf::Vector2f(vx, vy); }
-    void setRotation(float rot) { rotation = rot; }
-    void setColor(const sf::Color &col) { color = col; }
+    void setPosition(const sf::Vector2f &pos);
+    void setPosition(float x, float y);
+    void setVelocity(const sf::Vector2f &vel);
+    void setVelocity(float vx, float vy);
+    void setRotation(float rot);
+    void setColor(const sf::Color &col);
 
     /**
      * @brief Met à jour l'objet (position, etc.)
@@ -81,3 +81,4 @@ public:
      */
     bool isOutOfBounds(float screenWidth, float screenHeight) const;
 };
+

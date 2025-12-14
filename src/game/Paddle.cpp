@@ -1,4 +1,4 @@
-#include "Paddle.h"
+#include "Paddle.hpp"
 #include <algorithm>
 
 Paddle::Paddle(float x, float y, float width, float height, float screenW, float spd)

@@ -2,10 +2,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include "../core/InputManager.h"
-#include "Cannon.h"
-#include "Projectile.h"
-#include "Brick.h"
+#include "../core/InputManager.hpp"
+#include "Cannon.hpp"
+#include "Projectile.hpp"
+#include "Brick.hpp"
 
 /**
  * @brief Classe principale du jeu Casse-Briques Reborn
@@ -76,3 +76,4 @@ private:
      */
     void fireProjectile();
 };
+

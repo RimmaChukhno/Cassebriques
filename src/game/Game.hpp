@@ -2,10 +2,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include "../core/InputManager.h"
-#include "Paddle.h"
-#include "Ball.h"
-#include "Brick.h"
+#include "../core/InputManager.hpp"
+#include "Paddle.hpp"
+#include "Ball.hpp"
+#include "Brick.hpp"
 
 /**
  * @brief Classe principale du jeu Casse-Briques classique
@@ -95,3 +95,4 @@ private:
      */
     void drawGameOver();
 };
+
