@@ -26,8 +26,16 @@ private:
     std::vector<RebornGame::Brick> bricks;
 
     // État du jeu
+    int score;
+    int maxProjectiles;        // Nombre maximum de projectiles autorisés
+    int projectilesUsed;       // Nombre de projectiles utilisés
+    bool gameOver;
+    bool gameWon;
     bool hasActiveProjectile;
     bool mouseButtonWasPressed; // Pour détecter un seul clic
+    
+    // Police pour l'affichage du texte
+    sf::Font font;
 
     // Constantes
     static constexpr float WINDOW_WIDTH = 800.0f;
@@ -75,5 +83,25 @@ private:
      * @brief Tire un projectile
      */
     void fireProjectile();
+    
+    /**
+     * @brief Vérifie les conditions de victoire/défaite
+     */
+    void checkGameState();
+    
+    /**
+     * @brief Affiche le texte du score
+     */
+    void drawScore();
+    
+    /**
+     * @brief Affiche la fenêtre de victoire
+     */
+    void drawVictoryScreen();
+    
+    /**
+     * @brief Affiche la fenêtre de défaite
+     */
+    void drawDefeatScreen();
 };
 
