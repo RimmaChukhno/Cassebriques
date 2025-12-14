@@ -20,6 +20,18 @@ void Cannon::pointAt(float mouseX, float mouseY)
     float dy = mouseY - position.y;
 
     float angleRad = std::atan2(dy, dx);
+
+    // Reborn aiming constraint: forbid shooting downward.
+    // Screen Y grows downward, so "upward" directions are angles in (-pi, 0).
+    // Clamp slightly away from perfectly horizontal to reduce accidental waste.
+    constexpr float margin = 0.12f; // ~7 degrees
+    const float minAngle = -static_cast<float>(M_PI) + margin;
+    const float maxAngle = -margin;
+    if (angleRad > maxAngle)
+        angleRad = maxAngle;
+    if (angleRad < minAngle)
+        angleRad = minAngle;
+
     rotation = angleRad * 180.0f / static_cast<float>(M_PI);
 }
 
