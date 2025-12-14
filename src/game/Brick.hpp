@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../core/GameObject.h"
+#include "../core/GameObject.hpp"
 
 namespace ClassicGame
 {
@@ -28,16 +28,17 @@ namespace ClassicGame
         /**
          * @brief Vérifie si la brique est détruite
          */
-        bool isDestroyed() const { return destroyed; }
+        bool isDestroyed() const;
 
         /**
          * @brief Détruit la brique
          */
-        void destroy() { destroyed = true; }
+        void destroy();
 
         /**
          * @brief Retourne les points de la brique
          */
-        int getPoints() const { return points; }
+        int getPoints() const;
     };
 } // namespace ClassicGame
+

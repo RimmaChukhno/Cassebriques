@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../core/GameObject.h"
+#include "../core/GameObject.hpp"
 
 namespace RebornGame
 {
@@ -28,7 +28,7 @@ namespace RebornGame
         /**
          * @brief Vérifie si la brique est détruite
          */
-        bool isDestroyed() const { return destroyed; }
+        bool isDestroyed() const;
 
         /**
          * @brief Inflige des dégâts à la brique
@@ -39,12 +39,12 @@ namespace RebornGame
         /**
          * @brief Retourne les points de vie actuels
          */
-        int getHP() const { return currentHP; }
+        int getHP() const;
 
         /**
          * @brief Retourne les points de vie maximum
          */
-        int getMaxHP() const { return maxHP; }
+        int getMaxHP() const;
 
         /**
          * @brief Met à jour la couleur selon les HP restants
@@ -52,3 +52,4 @@ namespace RebornGame
         void updateColor();
     };
 } // namespace RebornGame
+

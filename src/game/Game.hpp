@@ -2,10 +2,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include "../core/InputManager.h"
-#include "Paddle.h"
-#include "Ball.h"
-#include "Brick.h"
+#include "../core/InputManager.hpp"
+#include "Paddle.hpp"
+#include "Ball.hpp"
+#include "Brick.hpp"
 
 /**
  * @brief Classe principale du jeu Casse-Briques classique
@@ -27,9 +27,13 @@ private:
 
     // État du jeu
     int score;
+    int lives;          // Nombre de vies restantes
     bool gameOver;
     bool gameWon;
     bool ballActive;
+    
+    // Police pour l'affichage du texte
+    sf::Font font;
 
     // Constantes
     static constexpr float WINDOW_WIDTH = 800.0f;
@@ -94,4 +98,15 @@ private:
      * @brief Affiche le message de fin de jeu
      */
     void drawGameOver();
+    
+    /**
+     * @brief Affiche la fenêtre de victoire
+     */
+    void drawVictoryScreen();
+    
+    /**
+     * @brief Affiche la fenêtre de défaite
+     */
+    void drawDefeatScreen();
 };
+

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../core/GameObject.h"
+#include "../core/GameObject.hpp"
 
 /**
  * @brief Canon du joueur (version Reborn)
@@ -37,3 +37,4 @@ public:
      */
     void draw(sf::RenderWindow &window) override;
 };
+

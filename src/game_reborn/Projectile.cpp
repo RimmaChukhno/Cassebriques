@@ -1,4 +1,4 @@
-#include "Projectile.h"
+#include "Projectile.hpp"
 #include <cmath>
 
 #ifndef M_PI

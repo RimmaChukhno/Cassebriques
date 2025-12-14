@@ -16,7 +16,15 @@ CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
 Makefile
+# CMake-generated files often end with .cmake, but this project also stores
+# toolchains/modules in the repo. Keep ignoring generated ones, but DO NOT
+# ignore our tracked scripts under /cmake.
 *.cmake
+!cmake/**/*.cmake
+
+# Additional local build folders (e.g. MinGW build)
+build-mingw/
+build-*/
 
 # IDE
 .vs/

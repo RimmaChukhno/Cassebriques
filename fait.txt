@@ -1,0 +1,10 @@
+1. Renommage des fichiers .h en .hpp :
+
+2. Tous les fichiers .hpp contiennent uniquement des déclarations (pas d'implémentations)
+Toutes les implémentations sont dans les fichiers .cpp correspondants
+Aucune erreur de linter détectée
+
+3. Condition de défaite/Victoire
+4. Fenetre 
+
+5. Version Reborn : ameliore le graphique du canon. Système de durabilité des briques

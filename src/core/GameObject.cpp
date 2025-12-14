@@ -1,4 +1,4 @@
-#include "GameObject.h"
+#include "GameObject.hpp"
 #include <cmath>
 
 #ifndef M_PI
@@ -129,4 +129,71 @@ bool GameObject::isOutOfBounds(float screenWidth, float screenHeight) const
     // Vérifier si complètement hors de l'écran
     return box.right < 0 || box.left > screenWidth ||
            box.bottom < 0 || box.top > screenHeight;
+}
+
+// Getters
+sf::Vector2f GameObject::getPosition() const
+{
+    return position;
+}
+
+sf::Vector2f GameObject::getSize() const
+{
+    return size;
+}
+
+float GameObject::getRadius() const
+{
+    return radius;
+}
+
+bool GameObject::getIsCircle() const
+{
+    return isCircle;
+}
+
+sf::Vector2f GameObject::getVelocity() const
+{
+    return velocity;
+}
+
+float GameObject::getRotation() const
+{
+    return rotation;
+}
+
+sf::Color GameObject::getColor() const
+{
+    return color;
+}
+
+// Setters
+void GameObject::setPosition(const sf::Vector2f &pos)
+{
+    position = pos;
+}
+
+void GameObject::setPosition(float x, float y)
+{
+    position = sf::Vector2f(x, y);
+}
+
+void GameObject::setVelocity(const sf::Vector2f &vel)
+{
+    velocity = vel;
+}
+
+void GameObject::setVelocity(float vx, float vy)
+{
+    velocity = sf::Vector2f(vx, vy);
+}
+
+void GameObject::setRotation(float rot)
+{
+    rotation = rot;
+}
+
+void GameObject::setColor(const sf::Color &col)
+{
+    color = col;
 }

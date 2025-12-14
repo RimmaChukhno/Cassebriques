@@ -15,19 +15,16 @@ struct AABB
      * @param other L'autre AABB à tester
      * @return true si intersection, false sinon
      */
-    bool intersects(const AABB &other) const
-    {
-        return !(right < other.left || left > other.right ||
-                 bottom < other.top || top > other.bottom);
-    }
+    bool intersects(const AABB &other) const;
 
     /**
      * @brief Calcule la largeur de la boîte
      */
-    float getWidth() const { return right - left; }
+    float getWidth() const;
 
     /**
      * @brief Calcule la hauteur de la boîte
      */
-    float getHeight() const { return bottom - top; }
+    float getHeight() const;
 };
+

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../core/GameObject.h"
+#include "../core/GameObject.hpp"
 
 /**
  * @brief Raquette du joueur (version classique)
@@ -38,3 +38,4 @@ public:
      */
     float calculateBounceAngle(float ballX) const;
 };
+
