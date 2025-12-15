@@ -10,6 +10,7 @@ Projet de développement de deux versions d'un jeu de casse-briques en C++ avec 
 ## 🚀 Démarrage rapide
 
 ### Prérequis
+
 - Compilateur C++ (MinGW, MSVC, ou Clang)
 - CMake 3.10+ (recommandé)
 - SFML 2.6+
@@ -17,11 +18,13 @@ Projet de développement de deux versions d'un jeu de casse-briques en C++ avec 
 ### Installation SFML (Windows)
 
 **Option 1 : Téléchargement manuel**
+
 1. Télécharger SFML depuis https://www.sfml-dev.org/download.php
 2. Extraire dans `C:\SFML`
 3. Configurer le chemin dans CMakeLists.txt si nécessaire
 
 **Option 2 : Via vcpkg**
+
 ```bash
 git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
@@ -43,6 +46,8 @@ cmake --build .
 ```bash
 # Windows
 .\CasseBriques.exe
+
+C:\Users\Abricot\Desktop\Cassebriques\build-mingw\bin>.\CasseBriques.exe !!!!
 
 # Linux/Mac
 ./CasseBriques
@@ -66,6 +71,7 @@ Cassebriques/
 ## 🎯 Fonctionnalités
 
 ### Version Classique
+
 - ✅ Raquette contrôlable
 - ✅ Balle avec rebonds
 - ✅ Grille de briques
@@ -74,12 +80,14 @@ Cassebriques/
 - ✅ Augmentation progressive de la difficulté
 
 ### Version Reborn
+
 - ✅ Canon qui suit la souris
 - ✅ Système de tir
 - ✅ Briques avec points de vie
 - ✅ Changement de couleur selon HP
 
 ### Bonus (optionnel)
+
 - ⭐ Collision cercle-AABB précise
 - ⭐ AssetManager (singleton)
 - ⭐ Chargement de niveaux
@@ -93,10 +101,13 @@ Voir [GUIDE_INSTALLATION.md](GUIDE_INSTALLATION.md) pour la checklist complète.
 ## 🐛 Problèmes courants
 
 ### SFML non trouvé
+
 Vérifier `CMAKE_PREFIX_PATH` ou les chemins dans CMakeLists.txt
 
 ### DLL manquantes (Windows)
+
 Copier les DLL SFML dans le dossier de l'exécutable :
+
 - `sfml-graphics-2.dll`
 - `sfml-window-2.dll`
 - `sfml-system-2.dll`
@@ -110,4 +121,3 @@ Copier les DLL SFML dans le dossier de l'exécutable :
 ## 👥 Auteur
 
 Projet développé dans le cadre d'un cours de programmation C++.
-

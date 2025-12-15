@@ -1,0 +1,75 @@
+RÉSUMÉ – PROJET CASSE-BRIQUES (SFML)
+
+## Résumé de ce qui a été réalisé
+
+- Architecture globale: passage à une appli SFML avec une seule fenêtre et un système de scènes (MainMenu, Settings, Classic, Reborn).
+- UI: menu principal + boutons, écran pause, victoire/défaite, et HUD.
+- Deux modes jouables:
+  - Classic: casse-briques “traditionnel” avec paddle/ball, score, victoire/défaite.
+  - Reborn (cannon): mode “arcade shooter” jouable avec des règles propres.
+- Build Windows stabilisé: scripts et configuration pour compiler correctement (MSYS2/MinGW vs MSVC), copie des DLL SFML + assets au bon endroit.
+
+
+## Reborn — mécaniques “playable” ajoutées
+
+- Pression de jeu: les briques descendent en continu; défaite si elles atteignent une danger line (ligne rouge).
+- Tir arcade:
+  - Tirs multiples (cap selon difficulté) + cadence (cooldown).
+  - Maintenir clic gauche pour tirer.
+- Contrainte d’aim: tir vers le haut seulement (on empêche les tirs vers le bas).
+- Types de tirs (hotkeys):
+  - 1 Normal (coût 1 munition)
+  - 2 Perçant (coût 2, traverse plusieurs impacts)
+  - 3 Explosif (coût 3, dégâts en zone, disparaît à l’impact)
+- HUD: score, munitions, tirs actifs, type de tir, cooldown, combo, barre de danger.
+
+
+## Partie “physique” (déplacement + collisions)
+
+### Déplacement (cinématique simple)
+- Tous les objets mobiles utilisent une vitesse v⃗  et avancent via:
+  pos⃗  ← pos⃗  + v⃗  · Δt
+- Projectile:
+  - Sa vitesse initiale vient d’un angle de tir:
+    vx = s cos(θ)
+    vy = s sin(θ)
+  - Rebonds sur murs gauche/droite (inversion de vx) et plafond (inversion de vy).
+  - Si le projectile sort par le bas, il est perdu.
+
+### Collision projectile ↔ brique (cercle vs rectangle)
+- Projectile = cercle, brique = rectangle (AABB).
+- On calcule le point du rectangle le plus proche du centre du cercle (clamp), puis on mesure la distance:
+  - Si distance < rayon ⇒ collision.
+- Normale de collision:
+  - On construit un vecteur normal n⃗  (direction de contact) pour savoir si l’impact vient plutôt d’un côté ou du dessus/dessous.
+- Réflexion (ricochet propre, plus réaliste):
+  - On reflète la vitesse:
+  v⃗ ’ = v⃗  − 2(v⃗ · n⃗ ) n⃗
+- Dé-pénétration:
+  - Après collision, on repousse légèrement le projectile le long de n⃗  pour éviter qu’il “reste coincé” dans la brique.
+
+### Spécificités des tirs
+- Perçant: ne rebondit pas immédiatement; il consomme un nombre de “pierces” avant de redevenir normal.
+- Explosif: applique des dégâts aux briques proches dans un rayon (AoE) et le projectile disparaît.
+
+
+## Conclusion (pour la présentation)
+
+Le projet est maintenant une base solide de jeu SFML “présentable”: menu/UX, deux modes, conditions victoire/défaite, et une physique simple mais cohérente. Le mode Reborn a été transformé en mode vraiment jouable grâce à une boucle arcade (multi-shot + cooldown), un système de pression (descente + danger line) et des tirs spéciaux.
+
+
+## Points d’amélioration (suite logique)
+
+- Physique plus fine:
+  - collisions continues (éviter le “tunneling” à grande vitesse),
+  - meilleure séparation cercle-rectangle dans les coins,
+  - ajout de friction/variation d’angle selon la zone d’impact.
+- Game design / équilibrage:
+  - tuning de vitesse de descente, cadence, coûts des tirs,
+  - niveaux variés et progression.
+- Feedback/juice:
+  - sons, particules, shake léger, flash sur hit, animations de destruction.
+- UI polish:
+  - preview trajectoire (optionnel), surbrillance danger, indicateurs de cooldown plus visuels.
+
+
